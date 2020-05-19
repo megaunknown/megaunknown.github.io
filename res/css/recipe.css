@@ -12,11 +12,11 @@ h1{
     background-color: #F0F0F0;
     font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-.MainHeading{
+h1.MainHeading{
     text-align: center;
     font-size: 22pt;
 }
-.NoHeading{
+h1.NoHeading{
     text-align: left;
     font-size: 18pt;
 }
