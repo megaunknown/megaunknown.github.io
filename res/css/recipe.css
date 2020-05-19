@@ -34,3 +34,6 @@ div{
 }
 
 
+ul{
+    list-style-image:url('../imgs/pie_bullet.png');
+}
