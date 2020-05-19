@@ -3,12 +3,14 @@ h1{
     color: #581845 ;
 }
 body{
-    background-color:  #DAF7A6 ;
+    background-color:  rgba(219, 247, 166, 0.226) ;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 a{
-    color:#FFC300;
+    color:rgb(5, 223, 114);
+    text-decoration: none;
 }
 a:hover{
     color: #FF5733 ;
+    text-decoration: underline;
 }
