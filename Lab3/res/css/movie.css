@@ -42,12 +42,15 @@ body{
 
 .MainContainer
 {
-    height: auto;
-    width: 100%;
-    position: relative;
+    margin: auto;
+	width: 800px;
+	border: 4px solid grey;
+	border-radius: 20px;
+	position: relative;	
+	overflow: hidden;
 }
 
-.MainContainer div
+.MainContainer
 {
     width: 800px;
     margin: auto;
@@ -65,10 +68,6 @@ body{
     vertical-align: middle;
 }
 
-.Space
-{
-    width: 2%;
-}
 
 .Column
 {
@@ -80,9 +79,26 @@ img .valign
     vertical-align: middle;
 }
 
-.critics
+#critics
 {
     color: red;
     font-size: 48pt;
     font-weight: bold;
+    margin: 15px;
+    position: absolute;
+}
+
+#OverviewSection
+{
+    width:250px;
+    float:right;
+    background-color:#A2B964;
+}
+
+
+#LeftSection
+{
+    width:550px;
+    position:relative;
+    float:left;
 }
