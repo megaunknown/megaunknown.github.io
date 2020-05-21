@@ -116,9 +116,11 @@ img .valign
 
 .ReviewColumn
 {
-    width: 47%; display: inline-block;
+    width: 47%; 
+    display: inline-block;
     margin-left: 2%;
     margin-top: 5px;
+    height: auto;
 }
 
 .ReviewBox
@@ -131,4 +133,13 @@ img .valign
     padding: 8px;
     overflow: hidden;
     position: relative;
+}
+
+.ReviewerPersonalInfo
+{
+    padding-top: 5px;
+}
+.ReviewerPersonalInfo div
+{
+    display: inline-block;
 }
