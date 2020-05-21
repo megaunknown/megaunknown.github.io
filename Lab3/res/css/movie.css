@@ -102,3 +102,33 @@ img .valign
     position:relative;
     float:left;
 }
+.BoldText
+{
+    font-weight: bold;
+}
+#MovieDetails
+{
+    font-family:"Arial";
+    padding:10px;
+    padding-top:0px;
+
+}
+
+.ReviewColumn
+{
+    width: 47%; display: inline-block;
+    margin-left: 2%;
+    margin-top: 5px;
+}
+
+.ReviewBox
+{
+    font-size: 8pt;
+    background-color: #E8DC9B;
+    font-weight: bold;
+    border: 2px solid grey;
+    border-radius: 10px;
+    padding: 8px;
+    overflow: hidden;
+    position: relative;
+}
