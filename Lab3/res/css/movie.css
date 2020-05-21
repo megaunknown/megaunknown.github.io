@@ -136,10 +136,15 @@ p img
     bottom:0;
 }
 
+/*Add Opacity to HTML/CSS validate*/
 .Style
 {
     opacity: 0.5;   
 }
 
+/*Remove Bullet from UL*/
+ul{
+    list-style-type: none;
+}
 
 
