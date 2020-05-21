@@ -129,7 +129,11 @@ p img
 	
 }
 
-#Position
+/*
+Bottom Right Fixed Position
+for Validate Checker
+*/
+#BottomRightFixedPosition
 {
     position: fixed;
     right:0;
