@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    line-height: 1;
+}
+
+body{
+    background-image: url('../images/background.png');
+    font-size: 8pt;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.topBanner
+{
+    height: 50px;
+    width: 100%;
+    background-image: url('../images/bannerbg.png');
+    background-repeat: repeat-x;
+    position: fixed;
+    top: 0px;
+    z-index: 10;
+}
+
+.topBanner div {
+    width: 795px;
+    margin: auto;
+}
+
+.movie-title
+{
+    font-size: 24pt;
+    font-weight: bold;
+    font-family: Tahoma,Verdana, sans-serif;
+    width: 100%;
+    text-align: center;
+    padding-top: 75px;
+    padding-bottom: 25px;
+    color: black;
+    text-shadow: 3px 3px #999999;
+}
+
+.MainContainer
+{
+    height: auto;
+    width: 100%;
+    position: relative;
+}
+
+.MainContainer div
+{
+    width: 800px;
+    margin: auto;
+    border-radius: 12px;
+    border: gray;
+    border-style: solid;
+    border-width: 4px;
+}
+.ContentBanner
+{
+    width: 550px;
+    height: 83px;
+    background-image: url('../images/rbg.png');
+    background-repeat: repeat-x;
+    vertical-align: middle;
+}
+
+.Space
+{
+    width: 2%;
+}
+
+.Column
+{
+    width: 47%;
+    height: 500px;
+}
+img .valign
+{
+    vertical-align: middle;
+}
+
+.critics
+{
+    color: red;
+    font-size: 48pt;
+    font-weight: bold;
+}
