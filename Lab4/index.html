@@ -32,10 +32,10 @@
             <fieldset>
                 <legend>Billing Address</legend>
                     <label>Address</label>
-                    <input type="text" placeholder="1234 Main Street.." name="address" maxlength="50" required>
+                    <input type="text" placeholder="1234 Main Street.." name="bil_address" maxlength="50" required>
                     <br>
                     <label>Country</label>
-                    <select id="country" name="country">
+                    <select id="country" name="bil_country">
                         <option value="USA">USA</option>
                         <option value="UAE">UAE</option>
                         <option value="sa">Riyadh</option>
@@ -43,29 +43,29 @@
                     </select> 
                     
                     <label>State</label>
-                    <input type="text" placeholder="State" name="state" maxlength="30">
+                    <input type="text" placeholder="State" name="bil_state" maxlength="30">
                 
                     <label>Zip-Code</label>
-                    <input type="text" placeholder="12345-12345" required name="zip-code" maxlength="30" pattern="\([0-9]{5}\)-\([0-9]{5}\)" title="should be ( followed by 5 digits ) followed by - then ( followed by 5 digits then )">
+                    <input type="text" placeholder="12345-12345" required name="bil_zip-code" maxlength="30" pattern="\([0-9]{5}\)-\([0-9]{5}\)" title="should be ( followed by 5 digits ) followed by - then ( followed by 5 digits then )">
            </fieldset>
            
            <fieldset>
                 <legend>Shipping Address</legend>
                     <label>Address</label>
-                    <input type="text" placeholder="1234 Main Street.." name="address" maxlength="50">
+                    <input type="text" placeholder="1234 Main Street.." name="ship_address" maxlength="50">
                     
                     <br>
                     <label>Country</label>
-                    <select id="country" name="country">
+                    <select id="country" name="ship_country">
                         <option value="USA">USA</option>
                         <option value="UAE">UAE</option>
                         <option value="sa">Riyadh</option>
                         <option value="Egypt">Egypt</option>
                     </select> 
                     <label>State</label>
-                    <input type="text" placeholder="State" name="state" maxlength="30">
+                    <input type="text" placeholder="State" name="ship_state" maxlength="30">
                     <label>Zip-Code</label>
-                    <input type="text" placeholder="12345-12345" name="zip-code" maxlength="30" pattern="\([0-9]{5}\)-\([0-9]{5}\)" title="should be ( followed by 5 digits ) followed by - then ( followed by 5 digits then )">
+                    <input type="text" placeholder="12345-12345" name="ship_zip-code" maxlength="30" pattern="\([0-9]{5}\)-\([0-9]{5}\)" title="should be ( followed by 5 digits ) followed by - then ( followed by 5 digits then )">
            </fieldset>
            
            <fieldset>
@@ -79,8 +79,8 @@
          
             <input type="checkbox" id="chkAgree" name="chkAgree" required>I agree to process this amount of money.
             <br>
-            <input type="submit" value="Checkout" size="20"> 
-            <input type="reset" value="Clear Data" size="20"> 
+            <input type="submit" value="Checkout" size="20" name="btnSubmit"> 
+            <input type="reset" value="Clear Data" size="20" name="btnClear"> 
           </form> 
     </body>
 </html>
