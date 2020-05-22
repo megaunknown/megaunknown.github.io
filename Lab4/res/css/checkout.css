@@ -3,13 +3,20 @@ body
     
     font-size: 18px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   /*
+    background-image: url('../images/Pattern-Backgrounds.jpg');
+   */
 }
 
-label:active{
+label:active.Payment{
     color: rgb(30, 3, 56);
     font-weight: bold;
 }
-label:hover{
+label:hover.Payment{
     color: rgb(91, 5, 172);
     font-weight: bold;
+}
+
+input,label {
+    margin: .4rem 0;
 }
