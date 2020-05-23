@@ -13,7 +13,7 @@ body
 	text-align:center;	
 }
 
-#MovieDesp
+#MovieTitle
 {
 	font-size: 24pt;
     font-family:"Verdana", sans-serif;
@@ -33,14 +33,14 @@ body
 	overflow: hidden;
 }
 
-#Overview
+#MovieOverview
 {
     width:250px;
     float:right;
     background-color:#A2B964;
 }
 
-#TextDesp
+#MovieInfo
 {
     font-family:"Arial";
     padding:10px;
@@ -55,7 +55,7 @@ body
     float:left;
 }
 
-.StyleBold
+.HeadingsForMovieInfo
 {
 	font-weight: bold;
     padding-top:5px;
@@ -141,7 +141,7 @@ for Validate Checker
 }
 
 /*Add Opacity to HTML/CSS validate*/
-.Style
+.OpacityForImages
 {
     opacity: 0.5;   
 }

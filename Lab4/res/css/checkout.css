@@ -1,6 +1,11 @@
+p{
+    font-variant: small-caps;
+    font-size: 15pt;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 body 
-{
-    
+{    
     font-size: 18px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
    /*
