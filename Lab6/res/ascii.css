@@ -37,11 +37,12 @@ body {
 {
     float: left;
 }
+
 fieldset{
     border: 5px solid black;
 }
 
-input{
+input, button{
     font-weight: bold;
 }
 
