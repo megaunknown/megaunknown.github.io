@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html><head>
+		<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+		<title>CS472: ASCII Animation Viewer</title>
+		<link href="res/ascii.css" type="text/css" rel="stylesheet">
+		<script src="res/animations.js" type="text/javascript"></script>
+		<script src="res/ascii.js" type="text/javascript"></script>
+	</head>
+	<h1 class="title">
+		CSE 190 M ASCII Animation Viewer
+	</h1>
+	<textarea rows="20" cols="80" class="viewArea">
+	</textarea>
+
+	<div class="controlsContainer">
+		<div class="subDiv">
+			<fieldset>
+				<legend>Play Controls:</legend>
+				<button id="btnStart">Start</button>
+				<button id="btnStop" disabled>Stop</button>
+			</fieldset>
+		</div>
+		<div class="subDiv">
+			<fieldset>
+				<legend>Animations:</legend>
+				<select name="cboAnimation">
+					<option>Blank</option>
+					<option>Excercise</option>
+					<option>Juggler</option>
+					<option>Bike</option>
+					<option>Dive</option>
+					<option>Custom</option>
+				</select>
+			</fieldset>
+		</div>
+		<div class="subDiv">
+			<fieldset>
+				<legend>Size:</legend>
+				<select name="cboSize">
+					<option>Tiny</option>
+					<option>Small</option>
+					<option>Medium</option>
+					<option>Large</option>
+					<option>Extra Large</option>
+					<option>XXL</option>
+				</select>
+			</fieldset>
+		</div>
+		<div class="subDiv">
+			<fieldset>
+				<legend>Speed:</legend>
+				<label for="chkTurbo"><input type="checkbox" id="chkTurbo" name="chkTurbo"/> Turbo</label> 
+			</fieldset>
+		</div>
+	</div>
+	<body>
+	</body>
+</html>

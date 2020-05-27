@@ -1,0 +1,47 @@
+
+body {
+    background-color: #CCCCFF;
+    font-size: 14pt;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.title
+{
+    font-size: 32pt;
+    width: 800px;
+    margin: auto;
+}
+
+.viewArea
+{
+    width: 90%;
+    height: 400px;
+    font-size: 12pt;
+    font-weight: bold;
+    display: block;
+    margin: auto;
+}
+
+.controlsContainer
+{
+    width: 50%;
+    margin: auto;
+    background-color: yellow;
+    display: block;
+}
+
+.subDiv
+{
+    float: left;
+}
+fieldset{
+    border: 5px solid black;
+}
+
+input{
+    font-weight: bold;
+}
+
