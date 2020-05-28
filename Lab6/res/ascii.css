@@ -23,6 +23,7 @@ body {
     font-weight: bold;
     display: block;
     margin: auto;
+    resize: none;
 }
 
 .controlsContainer
@@ -52,3 +53,4 @@ input, button{
     right: 5px;
     bottom: 5px;   
 }
+
