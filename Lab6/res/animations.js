@@ -19,13 +19,13 @@ var BLANK = "";
 
 var CUSTOM = "";   // you could change the value of this variable in your code
 
-var EXERCISE = "  o\n" +
-    " /#\\\n" +
-    " _|_\n" +
-    "=====\n" +
-    " \\o/\n" +
-    "  #\n" +
-    "_/ \\_\n";
+var EXERCISE =  "  o\n" +
+                " /#\\\n" +
+                " _|_\n" +
+                "=====\n" +
+                " \\o/\n" +
+                "  #\n" +
+                "_/ \\_\n";
 
 var JUGGLER = "   o\n" +
     "   O\n" +
