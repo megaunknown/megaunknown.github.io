@@ -46,3 +46,11 @@ input, button{
     font-weight: bold;
 }
 
+.imageContainer
+{
+    width: 150;
+    float: left;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}

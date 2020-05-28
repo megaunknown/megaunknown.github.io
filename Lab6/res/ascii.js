@@ -1,34 +1,30 @@
-const chkBoxTurbo = document.getElementById("chkTurbo");
-const cboAnimation = document.getElementById("cboAnimation");
-const cboSize = document.getElementById("cboSize");
-const btnStop = document.getElementById("btnStop");
-const btnStart = document.getElementById("btnStart");
-const drawingTextArea = document.getElementById("drawingArea");
+"use strict";
+let chkBoxTurbo, cboAnimation, cboSize, btnStop, btnStart, drawingTextArea, selectedAnimation, selectedSize;
+let frams = [], timerId = 0, iNumberOfFrames = 0, iCurrentFrameIndex = 0, timerInterval = 250;
 
-let selectedAnimation = '';
-let selectedSize = '';
-let frams = [];
-let timerId = 0;
-let iNumberOfFrames  = 0;
-let iCurrentFrameIndex  = 0;
-let timerInterval = 500;
+function onStart() {
+    chkBoxTurbo = document.getElementById("chkTurbo");
+    cboAnimation = document.getElementById("cboAnimation");
+    cboSize = document.getElementById("cboSize");
+    btnStop = document.getElementById("btnStop");
+    btnStart = document.getElementById("btnStart");
+    drawingTextArea = document.getElementById("drawingArea");
+}
 
+window.onload = onStart;
 
 /**
  * Get Animations Frames
  * 
  */
 function getFrames(arr) {
-    let newArray = arr.split("=====\n");
-    return newArray;
+    return arr.split("=====\n");
 }
 
 /**
  * On Click Start Button
  */
 function onBtnStart() {
-    drawingTextArea.value = "";
-
     selectedAnimation = cboAnimation.options[cboAnimation.selectedIndex].value;
     if (selectedAnimation == "Blank") {
         drawingTextArea.value = "";
@@ -42,17 +38,14 @@ function onBtnStart() {
 /**
  * 
  */
-function startAnimation()
-{
-     iNumberOfFrames = frams.length;
-     iCurrentFrameIndex = 0;
-
-     timerId = setInterval(loop,timerInterval)
+function startAnimation() {
+    iNumberOfFrames = frams.length;
+    iCurrentFrameIndex = 0;
+    timerId = setInterval(loop, timerInterval)
 }
 
-function loop()
-{
-    if(iCurrentFrameIndex >= iNumberOfFrames)
+function loop() {
+    if (iCurrentFrameIndex >= iNumberOfFrames)
         iCurrentFrameIndex = 0;
 
     drawingTextArea.value = frams[iCurrentFrameIndex];
@@ -64,9 +57,6 @@ function loop()
  */
 function onBtnStop() {
     changeStatus(false);
-    //Clear the Text Are
-    drawingTextArea.value = "";
-
     clearTimeout(timerId);
 }
 
@@ -74,9 +64,17 @@ function onBtnStop() {
  * On Turbo Checkbox Click
  */
 function onTurboClick() {
+    /*
+    clearTimeout(timerId); */
     if (chkBoxTurbo.checked == true) {
-        alert("Turbo Clicked")
+        timerInterval = 50;
+     //   timerId = setInterval(loop, timerInterval);
     }
+    else {
+        timerInterval = 250;
+    }
+    timerId = setInterval(loop, timerInterval);
+   
 }
 
 /**
@@ -84,8 +82,6 @@ function onTurboClick() {
  */
 function onAnimationClick() {
     selectedAnimation = cboAnimation.options[cboAnimation.selectedIndex].value;
-    
-
     if (selectedAnimation == "Blank" || selectedAnimation == "Custom") {
         drawingTextArea.value = "";
     }
