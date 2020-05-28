@@ -64,17 +64,16 @@ function onBtnStop() {
  * On Turbo Checkbox Click
  */
 function onTurboClick() {
-    /*
-    clearTimeout(timerId); */
-    if (chkBoxTurbo.checked == true) {
-        timerInterval = 50;
-     //   timerId = setInterval(loop, timerInterval);
+    if (btnStart.disabled == true) {
+        if (chkBoxTurbo.checked == true) {
+            timerInterval = 50;
+        }
+        else {
+            timerInterval = 250;
+        }
+        clearTimeout(timerId);
+        timerId = setInterval(loop, timerInterval);
     }
-    else {
-        timerInterval = 250;
-    }
-    timerId = setInterval(loop, timerInterval);
-   
 }
 
 /**
