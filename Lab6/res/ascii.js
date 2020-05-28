@@ -4,9 +4,10 @@ const cboSize = document.getElementById("cboSize");
 const btnStop = document.getElementById("btnStop");
 const btnStart = document.getElementById("btnStart");
 const drawingTextArea = document.getElementById("drawingArea");
+
 let selectedAnimation = '';
 let selectedSize = '';
-
+let frams = [];
 
 /**
  * Get Animations Frames
@@ -29,7 +30,16 @@ function onBtnStart() {
     }
     else {
         changeStatus(true);
+        startAnimation();
     }
+}
+
+/**
+ * 
+ */
+function startAnimation()
+{
+    
 }
 
 /**
@@ -55,7 +65,7 @@ function onTurboClick() {
  */
 function onAnimationClick() {
     selectedAnimation = cboAnimation.options[cboAnimation.selectedIndex].value;
-    let frams = [];
+    
 
     if (selectedAnimation == "Blank" || selectedAnimation == "Custom") {
         drawingTextArea.value = "";
@@ -110,7 +120,6 @@ function onSizeClick() {
     }
     drawingTextArea.style.fontSize = fontSize;
 }
-
 
 /**
  * Change the Status of Controls
