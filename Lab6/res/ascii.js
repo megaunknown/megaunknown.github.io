@@ -8,6 +8,11 @@ const drawingTextArea = document.getElementById("drawingArea");
 let selectedAnimation = '';
 let selectedSize = '';
 let frams = [];
+let timerId = 0;
+let iNumberOfFrames  = 0;
+let iCurrentFrameIndex  = 0;
+let timerInterval = 500;
+
 
 /**
  * Get Animations Frames
@@ -39,16 +44,30 @@ function onBtnStart() {
  */
 function startAnimation()
 {
-    
+     iNumberOfFrames = frams.length;
+     iCurrentFrameIndex = 0;
+
+     timerId = setInterval(loop,timerInterval)
+}
+
+function loop()
+{
+    if(iCurrentFrameIndex >= iNumberOfFrames)
+        iCurrentFrameIndex = 0;
+
+    drawingTextArea.value = frams[iCurrentFrameIndex];
+    iCurrentFrameIndex++;
 }
 
 /**
  * On Click End Button
  */
-function onBtnEnd() {
+function onBtnStop() {
     changeStatus(false);
     //Clear the Text Are
     drawingTextArea.value = "";
+
+    clearTimeout(timerId);
 }
 
 /**
@@ -93,32 +112,7 @@ function onAnimationClick() {
  */
 function onSizeClick() {
     selectedSize = cboSize.options[cboSize.selectedIndex].value;
-    let fontSize = '' ;
-    if(selectedSize == "Tiny")
-    {
-        fontSize = '7pt';
-    }
-    else if( selectedSize == "Small")
-    {
-        fontSize = '10pt';
-    }
-    else if(selectedSize == "Medium")
-    {
-        fontSize = '12pt';
-    }
-    else if(selectedSize == "Large")
-    {
-        fontSize = '16pt';
-    }
-    else if(selectedSize == "Extra Large")
-    {
-        fontSize = '24pt';
-    }
-    else if(selectedSize == "XXL")
-    {
-        fontSize = '32pt';
-    }
-    drawingTextArea.style.fontSize = fontSize;
+    drawingTextArea.style.fontSize = selectedSize;
 }
 
 /**
