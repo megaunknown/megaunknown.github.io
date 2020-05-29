@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		
 		<meta charset="utf-8" />
 		<title>CS472: ASCII Animation Viewer</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,10 +10,7 @@
 	</head>
 	
 	<h1 class="title">
-		<!--
-			<span style='font-size:20px;float: left;'>&#129505;</span>
-		-->
-		CSE 190 M ASCII Animation Viewer
+		CS472: ASCII Animation Viewer
 	</h1>
 	<textarea rows="20" cols="80" class="viewArea" id="drawingArea" readonly>
 	</textarea>
@@ -23,14 +19,14 @@
 		<div class="subDiv">
 			<fieldset>
 				<legend>Play Controls:</legend>
-				<button id="btnStart" onclick="onBtnStart();">Start</button>
-				<button id="btnStop" disabled onclick="onBtnStop();">Stop</button>
+				<button id="btnStart">Start</button>
+				<button id="btnStop" disabled >Stop</button>
 			</fieldset>
 		</div>
 		<div class="subDiv">
 			<fieldset>
 				<legend>Animations:</legend>
-				<select id="cboAnimation" onchange="onAnimationClick();">
+				<select id="cboAnimation">
 					<option>Blank</option>
 					<option>Excercise</option>
 					<option>Juggler</option>
@@ -43,7 +39,7 @@
 		<div class="subDiv">
 			<fieldset>
 				<legend>Size:</legend>
-				<select id="cboSize" onchange="onSizeClick();">
+				<select id="cboSize">
 					<option value="7pt">Tiny</option>
 					<option value="10pt">Small</option>
 					<option value="12pt">Medium</option>
@@ -56,7 +52,7 @@
 		<div class="subDiv">
 			<fieldset>
 				<legend>Speed:</legend>
-				<label for="chkTurbo"><input type="checkbox" id="chkTurbo" name="chkTurbo" onchange="onTurboClick();"/> Turbo</label> 
+				<label for="chkTurbo"><input type="checkbox" id="chkTurbo" name="chkTurbo"/> Turbo</label> 
 			</fieldset>
 		</div>
 	</div>

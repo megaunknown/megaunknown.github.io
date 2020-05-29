@@ -2,28 +2,29 @@
 let chkBoxTurbo, cboAnimation, cboSize, btnStop, btnStart, drawingTextArea, selectedAnimation, selectedSize;
 let frams = [], timerId = 0, iNumberOfFrames = 0, iCurrentFrameIndex = 0, timerInterval = 250;
 
-function onStart() {
+//Applying Unobtrusive JavaScript
+window.onload = function() {
+   
     chkBoxTurbo = document.getElementById("chkTurbo");
     cboAnimation = document.getElementById("cboAnimation");
     cboSize = document.getElementById("cboSize");
     btnStop = document.getElementById("btnStop");
     btnStart = document.getElementById("btnStart");
     drawingTextArea = document.getElementById("drawingArea");
-}
 
-window.onload = onStart;
+    btnStart.onclick = onBtnStart;
+    btnStop.onclick = onBtnStop;
+    cboAnimation.onchange = onAnimationClick;
+    cboSize.onchange = onSizeClick;
+    chkBoxTurbo.onchange = onTurboClick;
+};
 
-/**
- * Get Animations Frames
- * 
- */
+/* Get Animations Frames*/
 function getFrames(arr) {
     return arr.split("=====\n");
 }
 
-/**
- * On Click Start Button
- */
+/* On Click Start Button */
 function onBtnStart() {
     selectedAnimation = cboAnimation.options[cboAnimation.selectedIndex].value;
     if (selectedAnimation == "Blank") {
@@ -35,9 +36,6 @@ function onBtnStart() {
     }
 }
 
-/**
- * 
- */
 function startAnimation() {
     iNumberOfFrames = frams.length;
     iCurrentFrameIndex = 0;
@@ -52,17 +50,13 @@ function loop() {
     iCurrentFrameIndex++;
 }
 
-/**
- * On Click End Button
- */
+/* On Click End Button */
 function onBtnStop() {
     changeStatus(false);
     clearTimeout(timerId);
 }
 
-/**
- * On Turbo Checkbox Click
- */
+/* On Turbo Checkbox Click */
 function onTurboClick() {
     if (btnStart.disabled == true) {
         if (chkBoxTurbo.checked == true) {
@@ -76,9 +70,7 @@ function onTurboClick() {
     }
 }
 
-/**
- * When the User Select 
- */
+/* When the User Select  */
 function onAnimationClick() {
     selectedAnimation = cboAnimation.options[cboAnimation.selectedIndex].value;
     if (selectedAnimation == "Blank" || selectedAnimation == "Custom") {
@@ -102,18 +94,13 @@ function onAnimationClick() {
     }
 }
 
-/**
- * Change the Size of the TextArea
- */
+/* Change the Size of the TextArea */
 function onSizeClick() {
     selectedSize = cboSize.options[cboSize.selectedIndex].value;
     drawingTextArea.style.fontSize = selectedSize;
 }
 
-/**
- * Change the Status of Controls
- * Disable/Enable based on status 
- */
+/* Change the Status of Controls ( Disable/Enable based on status)  */
 function changeStatus(status) {
     btnStart.disabled = status;
     cboAnimation.disabled = status;
