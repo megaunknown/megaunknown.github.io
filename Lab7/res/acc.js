@@ -34,9 +34,7 @@ function onButtonAddClick()
     accountInfoList.push(data);
 
     let strText = txtArea.value;
-    for (const iterator of accountInfoList) {
-       let obj =  iterator;
-
+    for (const obj of accountInfoList) {
        strText += 'Account name: ' + obj.accountName + '\t' + 'Balance: ' + obj.balance + '\n'; 
     }
     txtArea.value = strText;
