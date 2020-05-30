@@ -30,12 +30,16 @@ function onButtonAddClick()
     //Clear the text
     txtArea.value = '';
     let acc = new makeAccount();
+    //get the object
     var data = acc.addAccount();
+    //push the object to the array
     accountInfoList.push(data);
 
     let strText = txtArea.value;
+    //traverse through the array and add them to the text.
     for (const obj of accountInfoList) {
        strText += 'Account name: ' + obj.accountName + '\t' + 'Balance: ' + obj.balance + '\n'; 
     }
+    // view the objects on the textarea.
     txtArea.value = strText;
 }
