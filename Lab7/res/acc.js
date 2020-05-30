@@ -1,36 +1,43 @@
 "use strict";
+let accountInfoList =[];
+let txtArea, btnCreateNewAccount,txtAccountName, txtDeposit;; 
 
 let makeAccount = function() {
-    let txtAccountName, txtDeposit, txtArea;
     txtAccountName =  document.getElementById('txtAccountName');
     txtDeposit =  document.getElementById('txtDeposit');
-    txtArea  =  document.getElementById('txtArea');
-
-    function addNewAccount(acc,amount) 
+    function addNewAccount() 
     {
-        let strText = txtArea.value;
-        strText += 'Account name: ' + acc + '\t' + 'Balance: ' + amount + '\n'; 
-        txtArea.value = strText;
-        //clear the text
-        txtAccountName.value = '';
-        txtDeposit.value = ''; 
+    //    alert(`addNewAccount method called...account :: ${txtAccountName.value} balance ::  ${txtDeposit.value}`);
+        return {
+            accountName:txtAccountName.value,
+            balance:txtDeposit.value
+        };
     }
 
     return { 
-        addAccount: function() { 
-            addNewAccount(txtAccountName.value,txtDeposit.value); 
-        }
-    }
-};
+        addAccount: addNewAccount
+    };
+}
 
 window.onload =  function(){
-    let btnCreateNewAccount; 
     btnCreateNewAccount =  this.document.getElementById('btnCreateNewAccount');
+    txtArea  =  document.getElementById('txtArea');
     btnCreateNewAccount.onclick = onButtonAddClick;
 }
 
 function onButtonAddClick()
 {
-    var acc = makeAccount();
-    acc.addAccount(); 
+    //Clear the text
+    txtArea.value = '';
+    let acc = new makeAccount();
+    var data = acc.addAccount();
+    accountInfoList.push(data);
+
+    let strText = txtArea.value;
+    for (const iterator of accountInfoList) {
+       let obj =  iterator;
+
+       strText += 'Account name: ' + obj.accountName + '\t' + 'Balance: ' + obj.balance + '\n'; 
+    }
+    txtArea.value = strText;
 }
