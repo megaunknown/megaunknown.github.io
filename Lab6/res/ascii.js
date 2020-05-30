@@ -4,7 +4,6 @@ let frams = [], timerId = 0, iNumberOfFrames = 0, iCurrentFrameIndex = 0, timerI
 
 //Applying Unobtrusive JavaScript
 window.onload = function() {
-   
     chkBoxTurbo = document.getElementById("chkTurbo");
     cboAnimation = document.getElementById("cboAnimation");
     cboSize = document.getElementById("cboSize");
