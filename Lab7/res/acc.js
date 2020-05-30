@@ -6,10 +6,10 @@ let makeAccount = function() {
     txtDeposit =  document.getElementById('txtDeposit');
     txtArea  =  document.getElementById('txtArea');
 
-    function addNewAccount(val) 
-    { 
+    function addNewAccount(acc,amount) 
+    {
         let strText = txtArea.value;
-        strText += val ; 
+        strText += 'Account name: ' + acc + '\t' + 'Balance: ' + amount + '\n'; 
         txtArea.value = strText;
         //clear the text
         txtAccountName.value = '';
@@ -18,7 +18,7 @@ let makeAccount = function() {
 
     return { 
         addAccount: function() { 
-            addNewAccount(txtAccountName.value + "\t " + txtDeposit.value + '\n'); 
+            addNewAccount(txtAccountName.value,txtDeposit.value); 
         }
     }
 };
