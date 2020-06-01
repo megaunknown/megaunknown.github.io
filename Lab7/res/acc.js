@@ -1,5 +1,5 @@
 "use strict";
-let accountInfoList =[];
+let accountInfoList = [];
 let txtArea, btnCreateNewAccount,txtAccountName, txtDeposit;; 
 
 let makeAccount = function() {
