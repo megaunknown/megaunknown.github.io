@@ -26,7 +26,7 @@ const Module=(
             txtAccountName =  document.getElementById('txtAccountName');
             txtDeposit =  document.getElementById('txtDeposit');
             function addNewAccount() {
-                let cls = new  Account(txtAccountName,txtDeposit);
+                let cls = new  Account(txtAccountName.value,txtDeposit.value);
                 return cls;
             }
         
@@ -54,7 +54,7 @@ const Module=(
             let strText = txtArea.value;
             //traverse through the array and add them to the text.
             for (const obj of accountInfoList) {
-               strText += 'Account name: ' + obj.accountName + '\t' + 'Balance: ' + obj.balance + '\n'; 
+               strText += 'Account name: ' + obj.getName() + '\t' + 'Balance: ' + obj.getDeposit() + '\n'; 
             }
             // view the objects on the textarea.
             txtArea.value = strText;
