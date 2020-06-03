@@ -3,7 +3,8 @@
 $(function() {
 	$('#hw').change(function() {
 		//var file = 'homeworks/'+$('#hw').val();
-		var file = 'https://megaunknown.github.io/Lab10/res/'+$('#hw').val();
+		//var file = 'https://megaunknown.github.io/Lab10/res/'+$('#hw').val();
+		var file ='https://github.com/megaunknown/megaunknown.github.io/tree/master/Lab10/res' + $('#hw').val();
 		alert(file);
 		$.ajax({
 			'url': file,
@@ -21,5 +22,3 @@ function ajaxSuccess(data) {
 function ajaxFailure(xhr, status, exception) {
   console.log(xhr, status, exception);
 }
-
-//$.get('https://www.google.com/images/branding/product/ico/googleg_lodp.ico');
