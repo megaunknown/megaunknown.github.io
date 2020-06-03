@@ -2,7 +2,8 @@
 
 $(function() {
 	$('#hw').change(function() {
-		var file = 'https://megaunknown.github.io/lab10/res/'+$('#hw').val();
+		var file = 'homeworks/'+$('#hw').val();
+		alert(file);
 		$.ajax({
 			'url': file,
 			'type': 'GET',
@@ -20,4 +21,4 @@ function ajaxFailure(xhr, status, exception) {
   console.log(xhr, status, exception);
 }
 
-//$.get('https://www.google.com/images/branding/product/ico/googleg_lodp.ico');
+$.get('https://www.google.com/images/branding/product/ico/googleg_lodp.ico');
