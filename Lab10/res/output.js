@@ -5,7 +5,7 @@ $(function() {
 		//var file = 'homeworks/'+$('#hw').val();
 		//var file = 'https://megaunknown.github.io/Lab10/res/'+$('#hw').val();
 		var file ='https://megaunknown.github.io/Lab10/res/' + $('#hw').val();
-		alert(file);
+		//alert(file);
 		$.ajax({
 			'url': file,
 			'type': 'GET',
