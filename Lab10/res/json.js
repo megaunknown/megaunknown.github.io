@@ -1,29 +1,36 @@
-$(function(){
-    let JSONString,JSONObject;
-
-    $("#btnGetUserInfo").click(function(){
+$(function () {
+    $("#btnGetUserInfo").click(function () {
+        let JSONObject;
         let strUserId = $("#txtUserId").val();
-        alert(strUserId);
-        /**/
-        JSONString = fetch('https://jsonplaceholder.typicode.com/users/' + strUserId )
-                .then(response => response.json())
-                .then(json => console.log(json));
-               
-        JSONObject =  JSON.parse(JSON.stringify(JSONString));
-        
-       $('#textareaOutput').val("");
-    //    $('#textareaOutput').val("sadfsafsdf");
+        $.ajax('https://jsonplaceholder.typicode.com/users/' + strUserId,
+            {
+                "type": "GET"
+            }).done(success).fail(fail);
+            
+        function success(data) {
+            JSONObject = JSON.parse(JSON.stringify(data));
+            return JSONObject;
+        }
+
+        function fail() {
+            console.log("Failed.");
+        }
+
+
+        $('#textareaOutput').val("");
         let address = JSONObject.address;
-        /* */
-        let strUserInfo = `Name:${ JSONObject.name}\n
+
+        let strUserInfo = `Name:${JSONObject.name}\n
                            UserName:${JSONObject.username}\n
                            Email:${JSONObject.email}\n
-                           Address:${address.street + ',' + address.suite }\n
+                           Address:${address.street + ',' + address.suite}\n
                            Phone:${JSONObject.phone}\n
                            Website:${JSONObject.website}`;
-       
-       //let strUserInfo = "Name:" + JSONObject.name;
+
+        //let strUserInfo = "Name:" + JSONObject.name;
+        //   alert(strUserInfo);
         $('#textareaOutput').val(strUserInfo);
+
     });
     /*
     $("#btnGetPosts").click(function(){
