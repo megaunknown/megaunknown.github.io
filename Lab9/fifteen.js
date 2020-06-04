@@ -1,9 +1,10 @@
 init = function () {
-    var puzzleArea = document.getElementById('puzzlearea');
-    var divs = puzzleArea.getElementsByTagName("div");
+
+    let puzzleArea = document.getElementById('puzzlearea');
+    let divs = puzzleArea.getElementsByTagName("div");
 
     // initialize each piece
-    for (var i = 0; i < divs.length; i++) {
+    for (let i = 0; i < divs.length; i++) {
         var div = divs[i];
 
         // calculate x and y for this piece
@@ -22,23 +23,34 @@ init = function () {
         div.y = y;
     }
 
+    /*
+        Shuffle Button Click Event
+    */
     $("#shufflebutton").click(function () {
-        alert("Shuffle...");
+        let arr = shuffle();
+        $("#puzzlearea > div").each(function (index, element) {
+            $(this).text(arr[index]);
+        });
     })
 
 
+    /*
+        MouseClick Event
+    */
     $("#puzzlearea").children().click(function () {
-        alert(this.innerText);
+        //    alert(this.innerText);
         let nextDivToCurrent = $(this).next();
-
         if (nextDivToCurrent.text() == 'X') {
             let currentDivTxt = $(this).text();
             let nextDivTxt = $(this).next().text();
-        //    alert("Before swapping" + currentDivTxt + ' ' + nextDivTxt);
+            //    alert("Before swapping" + currentDivTxt + ' ' + nextDivTxt);
             $(this).text(nextDivTxt);
             $(this).next().text(currentDivTxt);
-        //    alert("After " + currentDivTxt + ' ' + nextDivTxt);
-           
+            //    alert("After " + currentDivTxt + ' ' + nextDivTxt);    
+        }
+
+        if(checkSolution($("#puzzlearea").children()) == true){
+            alert("You solved the puzzle.");
         }
     });
 
@@ -56,29 +68,8 @@ init = function () {
     });
 
     /*
-    .click(function(){
-        alert(this.innerText);
-        alert("check next " + this.next().text("dd"));
-        //if()
-    })
+        Check user solution.
     */
-    /*
-        $("#puzzlearea").children().click(function(){
-            alert(this.innerText);
-        })
-    */
-    $("#checkbutton").click(function () {
-        if (checkSolution($("#puzzlearea").children()) == true) {
-            alert("True");
-        }
-        else {
-            alert("false");
-        }
-    });
-
-    function checkAround(element) {
-
-    }
     function checkSolution(list) {
         for (let i = 1; i <= 15; i++) {
             if (list[i - 1].innerText == i.toString(10)) {
@@ -87,8 +78,34 @@ init = function () {
         }
         return true;
     }
+
+    /*
+        Generate Shuffled Array.
+    */
+    function shuffle() {
+        let arr = [], n1;
+        //pick two random numbers from 1-15
+        while (arr.length != 15) {
+            n1 = Math.floor(Math.random() * 15) + 1;
+            if (arr.indexOf(n1) == -1)
+                arr.push(n1);
+        }
+        /*
+        Place BLANK Tile
+        */
+        n1 = Math.floor(Math.random() * 15) + 1;
+        arr.push('X');//15
+        let tmp = arr[n1];
+        arr[n1] = 'X';
+        arr[15] = tmp;
+
+        return arr;
+    }
 };
 init();
+
+
+
 
 
 
