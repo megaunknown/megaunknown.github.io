@@ -38,7 +38,7 @@ $(function () {
                 for (let i = 0; i < JSONObject.length; i++) {
                     var obj = JSONObject[i];
                     var post = `Title::${obj.title}\nBody::${obj.body}`;
-                    strUserPosts = strUserPosts + post + '\n';
+                    strUserPosts = strUserPosts + post + '\n\n';
                 }
 
                 $('#textareaOutput').val(strUserPosts);
@@ -68,11 +68,10 @@ $(function () {
             let strUserComments = '';
 
             for (let i = 0; i < JSONObject.length; i++) {
-                /*
+                
                 var obj = JSONObject[i];
-                var post = `Title::${obj.title}\nBody::${obj.body}`;
-                strUserPosts = strUserPosts + post + '\n';
-                */
+                var comment = `Name::${obj.name}\nEmail::${obj.email}\nBody::${obj.body}\n\n`;
+                strUserComments = strUserComments + comment; 
             }
 
             $('#textareaOutput').val(strUserComments);
