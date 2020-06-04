@@ -59,7 +59,7 @@ init = function () {
     */
     $("#puzzlearea").children().mouseover(function () {
         let nextDivToCurrent = $(this).next();
-        if (nextDivToCurrent.text() == 'X') {
+        if (nextDivToCurrent.text() === 'X') {
             $(this).addClass("movablepiece");
         }
         else {
@@ -72,7 +72,7 @@ init = function () {
     */
     function checkSolution(list) {
         for (let i = 1; i <= 15; i++) {
-            if (list[i - 1].innerText == i.toString(10)) {
+            if (list[i - 1].innerText === i.toString(10)) {
                 return false;
             }
         }
@@ -87,7 +87,7 @@ init = function () {
         //pick two random numbers from 1-15
         while (arr.length != 15) {
             n1 = Math.floor(Math.random() * 15) + 1;
-            if (arr.indexOf(n1) == -1)
+            if (arr.indexOf(n1) === -1)
                 arr.push(n1);
         }
         /*
