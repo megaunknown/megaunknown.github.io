@@ -22,3 +22,8 @@ init = function() {
         div.y = y; 
     }        
 };
+init();
+
+
+
+
