@@ -1,5 +1,5 @@
+'use strict';
 init = function () {
-
     let puzzleArea = document.getElementById('puzzlearea');
     let divs = puzzleArea.getElementsByTagName("div");
 

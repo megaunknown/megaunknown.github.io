@@ -1,5 +1,5 @@
+"use strict";
 $(function () {
-
     $("#btnGetUserInfo").click(function () {
         if ($("#txtUserId").val().length > 0) {
             $.ajax('https://jsonplaceholder.typicode.com/users/' + $("#txtUserId").val(), {
