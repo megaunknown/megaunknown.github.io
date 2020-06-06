@@ -1,10 +1,15 @@
 $(function () {
     "use strict";
     $("#btnGetUserInfo").click(function () {
+        $("#loader").hide();
+
         if ($("#txtUserId").val().length > 0) {
             $.ajax('https://jsonplaceholder.typicode.com/users/' + $("#txtUserId").val(), {
                 "type": "GET"
-            }).done(success).fail(failed);
+            }).done(success).fail(failed).always(function () {
+                $("#loader").hide();
+            });
+            $("#loader").show();
 
             function success(data) {
                 let JSONObject = JSON.parse(JSON.stringify(data));
@@ -26,10 +31,16 @@ $(function () {
 
     $("#btnGetPosts").click(function () {
         if ($("#txtUserId").val().length > 0) {
-           $.ajax("https://jsonplaceholder.typicode.com/posts", {
-            "type": "GET",
-            "data":{"userId": $("#txtUserId").val()}
-            }).done(success).fail(failed);
+            $("#loader").hide();
+            $.ajax("https://jsonplaceholder.typicode.com/posts", {
+                "type": "GET",
+                "data": { "userId": $("#txtUserId").val() }
+            }).done(success).fail(failed).always(function () {
+                $("#loader").hide();
+            });
+            $("#loader").show();
+
+
             function success(data) {
                 let JSONObject = JSON.parse(JSON.stringify(data));
                 console.log(JSONObject);
@@ -55,35 +66,38 @@ $(function () {
 
 
     $("#btnGetComments").click(function () {
-        if( $("#txtPostId").val().length > 0 )
-        {
-        $.ajax("https://jsonplaceholder.typicode.com/comments", {
+        if ($("#txtPostId").val().length > 0) {
+            $("#loader").hide();
+            $.ajax("https://jsonplaceholder.typicode.com/comments", {
                 "type": "GET",
-                "data":{"postid": $("#txtPostId").val()}
-            }).done(success).fail(failed);
+                "data": { "postid": $("#txtPostId").val() }
+            }).done(success).fail(failed)
+            .always(function () {
+                $("#loader").hide();
+            });
+            $("#loader").show();
 
-        function success(data) {
-            let JSONObject = JSON.parse(JSON.stringify(data));
-            console.log(JSONObject);
-            let strUserComments = '';
+            function success(data) {
+                let JSONObject = JSON.parse(JSON.stringify(data));
+                console.log(JSONObject);
+                let strUserComments = '';
 
-            for (let i = 0; i < JSONObject.length; i++) {
-                
-                var obj = JSONObject[i];
-                var comment = `Name::${obj.name}\nEmail::${obj.email}\nBody::${obj.body}\n\n`;
-                strUserComments = strUserComments + comment; 
+                for (let i = 0; i < JSONObject.length; i++) {
+
+                    var obj = JSONObject[i];
+                    var comment = `Name::${obj.name}\nEmail::${obj.email}\nBody::${obj.body}\n\n`;
+                    strUserComments = strUserComments + comment;
+                }
+
+                $('#textareaOutput').val(strUserComments);
             }
 
-            $('#textareaOutput').val(strUserComments);
+            function failed() {
+                console.log("Failed");
+            }
         }
-
-        function failed() {
-            console.log("Failed");
+        else {
+            alert("You must enter Post's id");
         }
-    }
-    else
-    {
-        alert("You must enter Post's id");
-    }
     });
 });
