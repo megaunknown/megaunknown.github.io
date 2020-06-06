@@ -1,4 +1,3 @@
-'use strict';
 init = function () {
     let puzzleArea = document.getElementById('puzzlearea');
     let divs = puzzleArea.getElementsByTagName("div");
@@ -48,10 +47,11 @@ init = function () {
             $(this).next().text(currentDivTxt);
             //    alert("After " + currentDivTxt + ' ' + nextDivTxt);    
         }
-
+        /*
         if(checkSolution($("#puzzlearea").children()) == true){
             alert("You solved the puzzle.");
         }
+        */
     });
 
     /*

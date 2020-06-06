@@ -1,5 +1,5 @@
-"use strict";
 $(function () {
+    "use strict";
     $("#btnGetUserInfo").click(function () {
         if ($("#txtUserId").val().length > 0) {
             $.ajax('https://jsonplaceholder.typicode.com/users/' + $("#txtUserId").val(), {
@@ -26,10 +26,10 @@ $(function () {
 
     $("#btnGetPosts").click(function () {
         if ($("#txtUserId").val().length > 0) {
-            $.ajax("https://jsonplaceholder.typicode.com/posts?userId=" + $("#txtUserId").val(), {
-                "type": "GET"
+           $.ajax("https://jsonplaceholder.typicode.com/posts", {
+            "type": "GET",
+            "data":{"userId": $("#txtUserId").val()}
             }).done(success).fail(failed);
-
             function success(data) {
                 let JSONObject = JSON.parse(JSON.stringify(data));
                 console.log(JSONObject);
@@ -57,9 +57,9 @@ $(function () {
     $("#btnGetComments").click(function () {
         if( $("#txtPostId").val().length > 0 )
         {
-        $.ajax('https://jsonplaceholder.typicode.com/comments?postid=' + $("#txtPostId").val(),
-            {
-                "type": "GET"
+        $.ajax("https://jsonplaceholder.typicode.com/comments", {
+                "type": "GET",
+                "data":{"postid": $("#txtPostId").val()}
             }).done(success).fail(failed);
 
         function success(data) {
